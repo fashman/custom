@@ -1,5 +1,3 @@
-# vue spa toolkit
-
 ## 目录结构
 
 ```
