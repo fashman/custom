@@ -1,0 +1,26 @@
+.next {
+  margin: 40px auto 200px;
+  color: #4f3f3c;
+  text-align: center;
+  
+  span {
+    width: 34px;
+    height: 33px;
+    background: url(./images/next.png) no-repeat center;
+    background-size: 34px 33px;
+    animation: dur 1.5s ease-in-out infinite;
+    display: inline-block;
+  }
+
+  @keyframes dur {
+    0% {  
+      transform: translate(0px, 0px);  
+    }  
+    50% {  
+      transform: translate(0px, -20px);  
+    }  
+    100% {  
+      transform: translate(0px, 0px);  
+    }  
+  }
+}

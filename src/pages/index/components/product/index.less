@@ -1,0 +1,108 @@
+.products {
+  background-color: #f9fafc;
+
+  .group {
+    
+    &:last-child {
+      padding-bottom: 96px;
+    }
+
+    img {
+      width: 750px;
+      height: 459px;
+      display: block;
+    }
+
+    .list {
+      margin: 0 32px;
+
+      li {
+        padding-left: 330px;
+        position: relative;
+        height: 256px;
+        margin-bottom: 20px;
+        box-shadow: 0 1px 10px 3px #e7e8ec;
+        position: relative;
+        border-radius: 6px;
+
+        a {
+          color: #4f3f3c;
+
+          .img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 294px;
+            height: 256px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+  
+            img {
+              display: block;
+              width: 294px;
+              height: 256px;
+            }
+          }
+  
+          h3 {
+            padding-top: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 26px;
+            line-height: 26px;
+            margin-bottom: 15px;
+          }
+  
+          p {
+            font-size: 24px;
+            margin-bottom: 15px;
+          }
+  
+          .tags {
+            overflow: hidden;
+  
+            span {
+              float: left;
+              height: 36px;
+              padding: 0 20px;
+              border: 1px solid #a8988a;
+              color: #a8988a;
+              box-sizing: border-box;
+              border-radius: 6px;
+              text-align: center;
+              line-height: 34px;
+              font-size: 20px;
+              margin: 0 10px 10px 0;
+            }
+          }
+  
+          .price {
+            position: absolute;
+            left: 0;
+            bottom: 30px;
+            width: 100%;
+            color: #b22a32;
+            font-size: 26px;
+            line-height: 26px;
+            text-align: right;
+            padding-right: 46px;
+            box-sizing: border-box;
+            
+            strong {
+              font-size: 40px;
+              margin: 0 5px;
+            }
+          }
+        }
+      }
+    }
+
+    .more {
+      display: block;
+      width: 200px;
+      height: 50px;
+      margin: 68px auto 0;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.list {
+  overflow: hidden;
+  padding-top: 150px;
+
+  li {
+    margin-bottom: 60px;
+    
+    .img {
+      position: relative;
+      min-height: 400px;
+
+      img {
+        width: 100%;
+        display: block;
+      }
+
+      .code {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: #ddd7cc;
+        font-size: 24px;
+        width: 750px;
+        height: 80px;
+        padding: 40px 30px 10px;
+        line-height: 30px;
+        text-align: right;
+        box-sizing: border-box;
+        background: url(./images/cover.png) no-repeat center bottom;
+        background-size: 750px auto;
+      }
+    }
+
+    .tit {
+      margin: 20px 30px 10px;
+      line-height: 50px;
+      font-size: 26px;
+      color: #7f7270;
+      max-height: 100px;
+      overflow: hidden;
+
+      /deep/ span {
+        padding: 0 10px;
+        color: #fff;
+        border: 1px solid #4f3f3c;
+        color: #4f3f3c;
+        border-radius: 5px;
+        font-size: 22px;
+        margin-right: 5px;
+      }
+    }
+
+    .tags {
+      overflow: hidden;
+      margin: 0 30px;
+
+      span {
+        float: left;
+        margin: 0 15px 15px 0;
+        padding: 0 10px;
+        // height: 30px;
+        // line-height: 30px;
+        // transform: scale(.8, .8);
+        background-color: #cab793;
+        color: #fff;
+        border-radius: 6px;
+        font-size: 22px;
+      }
+    }
+
+    p {
+      font-size: 24px;
+      color: #b22a32;
+      padding: 0 30px;
+      text-align: right;
+
+      span {
+        font-size: 40px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .nomore {
+    line-height: 100px;
+    text-align: center;
+    font-size: 26px;
+    color: #e3e2e1;
+  }
+}

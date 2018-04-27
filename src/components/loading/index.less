@@ -1,0 +1,43 @@
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 9999;
+
+  .loading-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98px;
+    height: 98px;
+
+    .loading-border {
+      width: 98px;
+      height: 98px;
+      background: url(./images/loading.png) no-repeat center top;
+      background-size: 98px auto;
+      animation: rotate 1s linear infinite;
+    }
+  
+    .loading-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: url(./images/loading.png) no-repeat center -131px;
+      background-size: 98px auto;
+      width: 98px;
+      height: 53px;
+    }
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

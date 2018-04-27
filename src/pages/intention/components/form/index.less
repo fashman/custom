@@ -1,0 +1,143 @@
+.form {
+  overflow: hidden;
+
+  > h2 {
+    font-size: 40px;
+    color: #3f221a;
+    padding: 40px 0 50px 50px;
+    position: relative;
+    line-height: 48px;
+
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 30px;
+      height: 48px;
+      background-color: #4f3f3c;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    span {
+      position: absolute;
+      top: 46px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .group {
+    padding: 50px 0 0 30px;
+
+    .tit {
+      font-size: 30px;
+      color: #4f3f3c;
+      padding-left: 60px;
+      position: relative;
+      line-height: 40px;
+      height: 40px;
+      margin-bottom: 20px;
+  
+      img {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+  
+        &.air {
+          width: 34px;
+          height: 24px;
+        }
+  
+        &.phone {
+          width: 29px;
+          height: 29px;
+        }
+      }
+    }
+
+    .input {
+      height: 110px;
+      border-bottom: 1px solid #f0f0f0;
+      line-height: 110px;
+      color: #4f3f3c;
+      font-size: 30px;
+      overflow: hidden;
+      font-weight: normal;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      label {
+        float: left;
+        width: 150px;
+        overflow: hidden;
+      }
+
+      input {
+        float: left;
+        width: 540px;
+        padding: 0;
+        height: 110px;
+        line-height: 110px;
+        text-align: right;
+        border: 0;
+        font-size: 30px;
+        outline: none;
+      }
+
+      &.last {
+        padding-left: 200px;
+        position: relative;
+
+        select, .code {
+          width: 200px;
+          height: 110px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          outline: none;
+          font-size: 30px;
+          color: #4f3f3c;
+          border: 0;
+          opacity: 0;
+        }
+
+        .code {
+          opacity: 1;
+          
+          span {
+            float: left;
+            max-width: 156px;
+            height: 110px;
+            margin-right: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          img {
+            width: 24px;
+            height: 14px;
+            float: left;
+            position: relative;
+            top: 48px;
+          }
+        }
+
+        input {
+          width: 340px;
+        }
+      }
+    }
+  }
+
+  .line {
+    height: 30px;
+    background-color: #f0f0f0;
+  }
+}
