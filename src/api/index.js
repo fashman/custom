@@ -1,9 +1,6 @@
 import axios from 'axios';
 
 // 测试
-export const getList = () => axios({
-  url: '//api.github.com/users'
-}).then(res => res.data);
 
 // 首页
 export const getIndexInfo = data => axios({
