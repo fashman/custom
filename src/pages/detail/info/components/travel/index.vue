@@ -1,20 +1,24 @@
 <template>
   <div class="travel J-travelBox">
     <!-- menu -->
-    <div class="tab">
-      <span @click="jumpTo(0)" :class="{cur: active < (detailInfo.itineraryList || []).length}">行程</span>
-      <span @click="jumpTo(detailInfo.itineraryList.length)" :class="{cur: active === (detailInfo.itineraryList || []).length}">费用</span>
+    <div :class="{menu: true, hide: isScrollDown}">
+      <Title />
+      <div class="tab">
+        <span @click="jumpTo(0)" :class="{cur: active < (detailInfo.itineraryList || []).length}">行程</span>
+        <span @click="jumpTo(detailInfo.itineraryList.length)" :class="{cur: active === (detailInfo.itineraryList || []).length}">费用</span>
+      </div>
+      <!-- 天数 -->
+      <div class="day-list" v-show="active < (detailInfo.itineraryList || []).length">
+        <swiper :options="daylist" ref="mySwiper">
+          <swiper-slide v-for="(item, index) in detailInfo.itineraryList || []" :key="index">
+            <span :class="{active: index === active}" @click="jumpTo(index)">D{{ index + 1 }}</span>
+          </swiper-slide>
+          <div class="prev" slot="button-prev"></div>
+          <div class="next" slot="button-next"></div>
+        </swiper>
+      </div>
     </div>
     <!-- 行程 -->
-    <div class="day-list" v-show="active < (detailInfo.itineraryList || []).length">
-      <swiper :options="daylist" ref="mySwiper">
-        <swiper-slide v-for="(item, index) in detailInfo.itineraryList || []" :key="index">
-          <span :class="{active: index === active}" @click="jumpTo(index)">D{{ index + 1 }}</span>
-        </swiper-slide>
-        <div class="prev" slot="button-prev"></div>
-        <div class="next" slot="button-next"></div>
-      </swiper>
-    </div>
     <div class="day-box J-scrollBox" v-for="(item, index) in detailInfo.itineraryList || []" :key="index">
       <div class="tit">
         <span>D{{ item.dayIndex }}</span>
@@ -91,14 +95,11 @@
 </template>
 
 <script>
-import { Swipe, SwipeItem } from 'mint-ui';
-import Vue from 'vue';
+
 import { mapState, mapMutations, mapActions } from 'vuex';
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css';
-
-Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem);
+import Title from '../title';
 
 export default {
   name: 'Travel',
@@ -116,29 +117,36 @@ export default {
       },
       RegTest: /<[^>]+>/g,
       active: 0,
-      show: false
+      show: false,
+      isScrollDown: false,
+      scrollTop: 0
     }
   },
   props: ['detailInfo'],
   components: {
-    swiper, swiperSlide
+     Title, swiper, swiperSlide
   },
   methods: {
     handleScroll(e) {
-      let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;;
-      let JscrollBox = document.querySelectorAll('.J-scrollBox');
-      let JtravelBoxTop = document.querySelector('.J-travelBox').offsetTop;
-      for( let i = 0; i < JscrollBox.length; i++ ) {
-        if ( JscrollBox[i].offsetTop <= scrollTop + JtravelBoxTop ) {
-          this.active = i;
-          this.$refs.mySwiper.swiper.slideTo(Math.floor((i + 1) / 5) * 4, 0);
+      if (this.timer) {
+        clearTimeout(this.timer);
+      }
+      // this.timer = setTimeout(() => {
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;;
+        let JscrollBox = document.querySelectorAll('.J-scrollBox');
+        let JtravelBoxTop = document.querySelector('.J-travelBox').offsetTop;
+        
+        this.show = scrollTop > 200 ? true : false;
+        this.isScrollDown = scrollTop > this.scrollTop && scrollTop > 100;
+        this.scrollTop = scrollTop;
+
+        for( let i = 0; i < JscrollBox.length; i++ ) {
+          if ( JscrollBox[i].offsetTop <= scrollTop + JtravelBoxTop ) {
+            this.active = i;
+            this.$refs.mySwiper.swiper.slideTo(Math.floor((i + 1) / 5) * 4, 0);
+          }
         }
-      }
-      if ( scrollTop > 200 ) {
-        this.show = true;
-      } else {
-        this.show = false;
-      }
+      // }, 100);
     },
     jumpTo(index) {
       let JscrollBox = document.querySelectorAll('.J-scrollBox');

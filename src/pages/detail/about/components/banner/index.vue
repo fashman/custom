@@ -13,24 +13,24 @@
           {{detailInfo ? detailInfo.product.duration : '--'}}天{{detailInfo ? (detailInfo.product.duration - 1) : '--'}}夜
         </h3>
         <p>
-          开始城市：
-          <span v-for="(startItem, startIndex) in (detailInfo ? detailInfo.product.startLocation : [])" :key="startIndex">
+          开始城市 :
+          <span v-for="startItem in (detailInfo ? detailInfo.product.startLocation : [])" :key="'s' + startItem.id">
             {{ startItem.cnName }}
           </span>
-        </p>
-        <p>
-          结束城市：
-          <span v-for="(endItem, endIndex) in (detailInfo ? detailInfo.product.endLocation : [])" :key="endIndex">
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          结束城市 :
+          <span v-for="endItem in (detailInfo ? detailInfo.product.endLocation : [])" :key="'e' + endItem.id">
             {{ endItem.cnName }}
           </span>
         </p>
-        <span>编号：{{ detailInfo ? detailInfo.product.productCode : 'WX2018321'}}</span>
+        <span class="type">{{ customType[detailInfo ? detailInfo.product.productSubChildType : 0] }}</span>
+        <span class="code">ID：{{ detailInfo ? detailInfo.product.productCode : 'WX2018321'}}</span>
       </div>
     </div>
     <h2>{{ detailInfo && detailInfo.translation ? detailInfo.translation.title : '这是个未知标题' }}</h2>
     <div class="tags" v-if="tags.length">
       <span :class="{hasmore: item.descCN}" @click="showTagsInfo(item)" v-for="(item, index) in tags" :key="index">
-        {{item.nameCN}}
+        {{item.cnName || item.nameCN}}
         <i></i>
       </span>
     </div>
@@ -54,6 +54,7 @@
 import { Swipe, SwipeItem } from 'mint-ui';
 import Vue from 'vue';
 import { mapState, mapMutations, mapActions } from 'vuex';
+import utils from '@/utils/utils';
 
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
@@ -64,7 +65,8 @@ export default {
     return {
       index: 1,
       show: false,
-      tagInfo: {}
+      tagInfo: {},
+      customType: utils.customType
     }
   },
   computed: {

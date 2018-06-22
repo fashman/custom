@@ -1,0 +1,156 @@
+@color1: #4f3f3c;
+@color2: #5f5250;
+@color3: #c59e71;
+@color4: #a8988a;
+@color5: #999999;
+
+.about {
+
+  .about-woqu {
+    padding: 60px 40px 190px;
+    color: #fff;
+    background-size: 672px 332px;
+    background-color: @color1;
+    box-sizing: border-box;
+    height: 795px;
+    background-image: url(@/images/brand/map.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    transform: all .5s;
+    overflow: hidden;
+    .about-woqu-title {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 24px;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+      line-height: 1.8em;
+    }
+
+    .arrows {
+      background: url(./images/arrows-down.png) no-repeat;
+      background-size: 32px 15px;
+      position: absolute;
+      bottom: 60px;
+      margin: auto;
+      left: 0;
+      right: 0;
+      width: 32px;
+      height: 15px;
+      display: none;
+    }
+
+    .unfold {
+      height: 795px !important;
+    }
+  }
+
+  .about-hotLine {
+    padding: 100px 40px;
+
+    .about-hotLine-title {
+      font-size: 40px;
+      color: #513f3c;
+    }
+    
+    .about-phone {
+      padding-left: 30px;
+      margin-top: 37px;
+
+      p {
+        height: 94px;
+        line-height: 93px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #f0f0f0;
+        position: relative;
+
+        a {
+          font-size: 0;
+          display: block;
+          
+          span {
+            font-size: 24px;
+            color: #513f3c;
+          }
+
+          .territory {
+            font-weight: bold;
+            padding-right: 15px;
+          }
+
+          .number {
+            padding-left: 15px;
+          }
+
+          img {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            right: 35px;
+            height: 22px;
+            width: 12px;
+          }
+        }
+      }
+
+      p:last-child {
+        border: none;
+      }
+    }
+
+    .about-Qrcode {
+      margin-top: 58px;
+      padding: 36px;
+      box-shadow: 0 2px 20px  #d5c6b8;
+      border-radius: 8px;
+      display: flex;
+
+      .about-Qrcode-img {
+        width: 238px;
+        
+        img {
+          width: 238px;
+          height: 238px;
+          display: block;
+        }
+      }
+
+      .about-Qrcode-info {
+        flex:1;
+        margin-left: 64px;
+        font-size: 20px;
+        color: @color5;
+
+        .title {
+          color: @color1;
+          font-size: 30px;
+          font-weight: bold;
+          margin: 20px 0 6px;
+        }
+
+        p:nth-child(2) {
+          margin-bottom: 74px;
+        }
+
+        p:nth-child(3) {
+         padding-top: 10px;
+         border-top: 1px solid #eeeeee;
+         margin-bottom: 18px;
+        }
+        
+        .text {
+          font-size: 26px;
+          color: @color3;
+          font-weight: bold;
+        }
+        p:last-child {
+          margin: 14px 0 0px;
+        }
+      }
+    }
+  }
+}

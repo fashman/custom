@@ -24,7 +24,7 @@
                   </span>
                 </div>
                 <div>
-                  <p>从业经历：{{ item.customer }}</p>
+                  <p>{{ item.customer }}</p>
                   <p>旅行过：{{ item.travel }}</p>
                 </div>
               </div>
@@ -45,7 +45,7 @@
                   </span>
                 </div>
                 <div>
-                  <p>从业经历：{{ item.customer }}</p>
+                  <p>{{ item.customer }}</p>
                   <p>旅行过：{{ item.travel }}</p>
                 </div>
               </div>
@@ -66,7 +66,7 @@
                   </span>
                 </div>
                 <div>
-                  <p>从业经历：{{ item.customer }}</p>
+                  <p>{{ item.customer }}</p>
                   <p>旅行过：{{ item.travel }}</p>
                 </div>
               </div>

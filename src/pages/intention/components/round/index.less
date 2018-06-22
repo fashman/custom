@@ -1,0 +1,148 @@
+.round-box {
+  position: absolute;
+  left: 50%;
+  bottom: -335px;
+  // bottom: 100px;
+  width: 500px;
+  height: 500px;
+  box-sizing: border-box;
+  margin-left: -250px;
+  border-radius: 50%;
+  border: 2px solid rgba(204, 204, 204, .6);
+  z-index: 100;
+  transition: all .5s linear;
+
+  span {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: all .5s linear;
+
+    &.a {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #a17c6a;
+    }
+
+    &.b {
+      top: 73px;
+      left: 426px;
+      transform: translate(-50%, -50%);
+      background-color: #809eb3;
+    }
+
+    &.c {
+      top: 50%;
+      left: 100%;
+      transform: translate(-50%, -50%);
+      background-color: #c48a8a;
+    }
+
+    &.d {
+      top: 426px;
+      left: 426px;
+      transform: translate(-50%, -50%);
+      background-color: #75babb;
+    }
+
+    &.e {
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #a17c6a;
+    }
+
+    &.f {
+      top: 427px;
+      left: 73px;
+      transform: translate(-50%, -50%);
+      background-color: #809eb3;
+    }
+
+    &.g {
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      background-color: #c48a8a;
+    }
+
+    &.h {
+      top: 73px;
+      left: 73px;
+      transform: translate(-50%, -50%);
+      background-color: #75babb;
+    }
+
+    &.cur {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.btn {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  z-index: 101;
+  display: inline-block;
+
+  span {
+    display: inline-block;
+    padding: 2px;
+    // animation: text 1s ease-in-out infinite;
+    animation: kreep 0.7s ease 2s infinite alternate;
+
+    // &.a {
+    //   animation-delay: 0s;
+    // }
+
+    // &.b {
+    //   animation-delay: .1s;
+    // }
+
+    // &.c {
+    //   animation-delay: .2s;
+    // }
+
+    // &.d {
+    //   animation-delay: .3s;
+    // }
+  }
+}
+
+@keyframes kreep {
+  0% {
+    transform: scale(1.1,.9);
+  }
+  50% { 
+    transform: scale(.9,1.1) translateY(-.5rem);
+  }
+  70% { 
+    transform: scale(1);
+  }
+}
+
+@keyframes text {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  10%, 20% {
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}

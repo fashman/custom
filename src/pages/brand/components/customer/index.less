@@ -1,0 +1,182 @@
+@color1: #4f3f3c;
+@color2: #5f5250;
+@color3: #c59e71;
+@color4: #a8988a;
+@color5: #999999;
+
+.custom {
+  padding: 80px 40px 0;
+  margin-bottom: 110px;
+  
+  .custom-intro-icon {
+    display: flex;
+    margin-top: 30px;
+    
+    .custom-intro-item {
+      flex: 1;
+      border: 1px solid #cfc6b6;
+      border-radius: 8px;
+      padding: 24px;
+      .custom-intro-item-p1 {
+        font-size: 26px;
+        color: @color1;
+      }
+
+      .custom-intro-item-p2 {
+        font-size: 12px;
+        color: @color4;
+        margin-top: 4px;
+
+        .domestic-character {
+          display: block;
+          height: 11px;
+          width: 132px;
+        }
+
+        .overseas-character {
+          width: 146px;
+          height: 12px;
+          display: block;
+        }
+      }
+
+      .custom-intro-item-p3 {
+        font-size: 22px;
+        color: @color3;
+        margin-top: 16px;
+      }
+    }
+
+    .inland-custom {
+      background: url(@/images/brand/inland-icon.png) top right no-repeat;
+      background-size: 111px 89px;
+      background-position-y: 5px;
+    }
+    .overseas-custom {
+      margin-left: 20px;
+      background: url(@/images/brand/overseas-icon.png) top right no-repeat;
+      background-size: 111px 89px;
+      background-position-y: 5px;
+    }
+  }
+
+  .custom-master {
+    margin-top: 100px;
+
+    .customer {
+      .customer-item {
+        position: relative;
+        margin: 30px 0 40px;
+
+        .customer-info {
+          display: flex;
+
+          .customer-info-img {
+            flex: 0 0 200px;
+            position: relative;
+            margin-right: 44px;
+
+            img {
+              height: 230px;
+              width: 200px;
+              display: block;
+              border-radius: 8px;
+              box-shadow: 0 2px 20px  #d5c6b8;
+            }
+
+            span {
+              display: inline-block;
+              position: absolute;
+              width: 10px;
+              height: 100px;
+              position: absolute;
+              left: -10px;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+              background: #d4c6b9;
+            }
+          }
+
+          .customer-info-content {
+            flex: 1;
+             
+            .customer-name {
+              font-size: 26px;
+              font-weight: bold;
+              color: #000000;
+              margin-bottom: 15px;
+            }
+
+            .customer-detail {
+              color: @color5;
+              font-size: 0;
+
+              span {
+                font-size: 20px;
+                border-right: 2px solid @color5;
+                display: inline-block;
+              }
+
+              span:nth-child(1) {
+                padding-right: 6px;
+              }
+
+              span:nth-child(2) {
+                padding: 0 6px;
+              }
+
+              span:nth-child(3) {
+                padding-left: 6px;
+                border: none;
+              }
+            }
+
+            .customer-tag {
+              font-size: 0;
+              margin-bottom: 42px;
+
+              span {
+                font-size: 20px;
+                color: @color4;
+                width: 114px;
+                height: 38px;
+                line-height: 35px;
+                text-align: center;
+                border: 1px solid #a8988a;
+                border-radius: 6px;
+                margin: 13px 16px 0 0;
+                display: inline-block;
+                box-sizing: border-box;
+              }
+            }
+
+            .customer-link {
+              font-size: 0;
+
+              span{
+                display: inline-block;
+                width: 160px;
+                height: 46px;
+                line-height: 46px;
+                text-align: center;
+                border-radius: 5px;
+                font-size: 20px;
+                color: #fff;
+              }
+
+              .addWechat {
+                background: @color3;
+                margin-right: 60px;
+              }
+
+              .invitation {
+                background: @color1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

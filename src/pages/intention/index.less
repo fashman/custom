@@ -1,4 +1,26 @@
 .intention {
-  overflow: hidden;
-  padding-bottom: 120px;
+  // overflow: hidden;
+  // padding-bottom: 120px;
+  height: 100%;
+  box-sizing: border-box;
+
+  /deep/ .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  /deep/ .swiper-container {
+    height: 100%;
+
+    .swiper-slide {
+      overflow: hidden;
+
+      &.scroll-swiper {
+        height: auto;
+        padding: 105px 0 120px;
+      }
+    }
+  }
 }

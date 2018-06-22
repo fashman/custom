@@ -4,9 +4,10 @@
       <Travel :detail-info="detail || {}"/>
       <Reservation :detail-info="detail" v-if="showBottom"/>
       <Error :error="errorModal.show" :text="errorModal.text" :callback="changeState"/>
-      <SideBar :callback="goBack" :group-id="detail.groupId"/>
+      <SideBar :callback="goBack"/>
     </div>
     <Loading :loading="loading"/>
+    <Consulting />
   </div>
   
 </template>
@@ -19,6 +20,7 @@ import Reservation from '@/components/reservation';
 import Loading from '@/components/loading';
 import Error from '@/components/error';
 import SideBar from '@/components/sidebar';
+import Consulting from '@/components/consulting';
 
 export default {
   name: 'DetailInfo',
@@ -43,7 +45,7 @@ export default {
     }
   },
   components: { 
-    Travel, Reservation, Loading, Error, SideBar
+    Travel, Reservation, Loading, Error, SideBar, Consulting
   },
   computed: {
     ...mapState('detail', {

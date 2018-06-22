@@ -1,9 +1,5 @@
 <template>
   <div class="form">
-    <h2>
-      我的专属行程
-      <span><User /></span>
-    </h2>
     <div class="group">
       <div class="tit">
         <img class="air" src="./images/airplane.png" alt="">
@@ -59,23 +55,15 @@
 
 <script>
 import { phoneTypeList } from '@/utils/phoneCheck';
-import User from '@/components/user';
 
 export default {
   name: 'Form',
   data() {
     return {
       phoneTypeList,
-      showUser: false
     }
   },
   props: ['formData'],
-  components: { User },
-  methods: {
-    handleShowUser() {
-      this.showUser = !this.showUser;
-    }
-  }
 }
 </script>
 

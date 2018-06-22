@@ -24,6 +24,7 @@ export default {
       const { mobile, name, countryCode } = contactInfo;
       const type = phoneTypeList.find((v, i) => v.code === countryCode).key;
       const checkPhone = phoneRegExpTest( type, mobile);
+      const { utmMedium = '', utmSource = '' } = this.$route.query;
       if ( !name ) {
         this.changeState({key: 'errorModal', value: { show: true, text: '请填写联系人信息'}});
         return;
@@ -31,7 +32,7 @@ export default {
         this.changeState({key: 'errorModal', value: { show: true, text: checkPhone.msg}});
         return;
       } else {
-        this.submitForm({data: this.formData});
+        this.submitForm({data: { ...this.formData, utmMedium, utmSource }});
       }
     },
     handleYsf() {

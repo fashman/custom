@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // 测试
-export const getList = () => axios({ 
+export const getList = () => axios({
   url: '//api.github.com/users'
 }).then(res => res.data);
 
@@ -27,14 +27,20 @@ export const getProductList = data => axios({
   data: JSON.stringify({
     Req_Header: { appid: 'WOQUWAP001', app_version: '1.2', cmd: 'custom_list' },
     Req_Body: {
-      continent: '',
       currency: 'CNY',
       returnNumber: 10,
-      subTypes: [],
       startFrom: 1,
+      continent: '',
       countries: [],
-      durationRangeStart: null,
-      durationRangeEnd: null,
+      durations: [],
+      areas: [],
+      cities: [],
+      startLocations: [],
+      endLocations: [],
+      interestTopicTags: [],
+      suitableCrowdTags: [],
+      price: [0, 1000],
+      sort: 0,
       ...data
     }
   }),
@@ -43,7 +49,7 @@ export const getProductList = data => axios({
 }).then(res => res.data);
 
 // 详情页
-export const getDetail = id => axios({ 
+export const getDetail = id => axios({
   url: '//api.woqu.com/mobile',
   method: 'post',
   data: JSON.stringify({
@@ -53,6 +59,24 @@ export const getDetail = id => axios({
 }).then(res => res.data);
 
 // 判断是否登录
-export const checkLogin = () => axios({ 
+export const checkLogin = () => axios({
   url: '//m.woqu.com/member/check-is-login',
+}).then(res => res.data);
+
+// 获取定制师信息
+export const getDesignerInfo = () => axios({
+  data: JSON.stringify({
+    Req_Header: { appid: 'WOQUWAP001', app_version: '1.2', cmd: 'custom_designer'},
+    Req_Body: {}
+  }),
+  method: 'post',
+  url: '//api.woqu.com/mobile'
+}).then(res => res.data);
+
+//提交定制
+export const submitCustom = (data) => axios({
+  data,
+  method: 'post',
+  url: '//m.woqu.com/custom/intent/create',
+  headers:{'Content-Type': 'application/json'},
 }).then(res => res.data);

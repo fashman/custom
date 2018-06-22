@@ -1,43 +1,33 @@
 .list-page {
   overflow: hidden;
   position: relative;
+  padding: 0 44px;
 
-  .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 122px;
-    padding: 30px;
-    background-color: #fff;
-    z-index: 99;
-    box-sizing: border-box;
+//   html {
+//     -ms-overflow-style:none;
+//     overflow:-moz-scrollbars-none;
+// }
+// html::-webkit-scrollbar{width:0px}
 
-    span {
-      display: inline-block;
-      height: 60px;
-      line-height: 60px;
-      padding: 0 20px;
-      color: #513f3c;
-      font-size: 28px;
-      margin-right: 30px;
-      border-radius: 6px;
-      border: 1px solid #513f3c;
+  /deep/ .loading {
+    background-color: rgba(255, 255, 255, .6);
+  }
 
-      &.cur {
-        color: #fff;
-        background-color: #513f3c;
+  /deep/ .header {
+    margin-bottom: 150px;
+
+    .header-box {
+      border-bottom: 0!important;
+
+      .logo {
+        margin-left: 44px!important;
+      }
+
+      .user-icon {
+        right: 44px!important;
       }
     }
-
-    i {
-      position: absolute;
-      top: 46px;
-      right: 20px;
-      width: 30px;
-      height: 30px;
-      // background: url(@/images/list/menu.png) no-repeat center;
-      // background-size: 30px 26px;
-    }
   }
+
+  
 }

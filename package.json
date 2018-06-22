@@ -1,7 +1,7 @@
 {
-  "name": "vue",
+  "name": "h5-custom",
   "version": "1.0.0",
-  "description": "vue test",
+  "description": "h5 custom woqu",
   "author": "liangren.wu <liangren.wu@ipptravel.com>",
   "private": true,
   "scripts": {
@@ -9,13 +9,17 @@
     "check": "modules-version-check --cli yarn update",
     "lint": "eslint --ext .js,.vue src",
     "prod": "node webpack.prod.conf.js",
-    "build": "npm-run-all lint check prod"
+    "build": "npm-run-all lint prod"
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "debounce": "^1.1.0",
+    "modules-version-check": "^0.2.13",
     "vue": "^2.5.2",
+    "vue-parallaxy": "^1.1.1",
     "vue-pull-to": "^0.1.6",
     "vue-router": "^3.0.1",
+    "vue-slider-component": "^2.6.2",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -44,10 +48,10 @@
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
+    "js-cookie": "^2.2.0",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "mint-ui": "^2.2.13",
-    "modules-version-check": "^0.2.13",
     "node-notifier": "^5.1.2",
     "npm-run-all": "^4.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",

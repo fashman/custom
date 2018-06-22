@@ -7,32 +7,52 @@ export default {
   state() {
     return {
       loading: false,
-      // 洲
-      continent: '',
-      // 国家列表
-      countryList: [],
-      // 选中国家数据
-      countrySelectList: [],
-      // 临时选中国家数据，未点击确定
-      countrySelectFake: [],
-      tripAreas: [],
-      // 是否显示国家筛选框
-      showCountryModal: false,
-      // 天数
-      days: { min: null, max: null },
-      // 临时操作天数
-      daysFake: { min: null, max: null },
-      // 是否显示天数选择框
-      showDaysModal: false,
+      // 是否显示目的地筛选框
+      showDestinationModal: false,
+      // 是否显示筛选选择框
+      showFilterModal: false,
+      // 是否显示主题选择框
+      showThemeModal: false,
       // 页数
       startFrom: 1,
       // 列表数据
       list: [],
       total: 10000,
+      preTotal: 0,
+      preloading: false,
       errorModal: {
         show: false,
         text: ''
-      }
+      },
+      sort: 0,
+      facetFields: [],
+      facetFieldsFake: [],
+      facetFieldsSelect: {
+        continent: [],
+        country: [],
+        duration: [],
+        area: [],
+        city: [],
+        start_location: [],
+        end_location: [],
+        interest_topic_tag: [],
+        suitable_crowd_tag: [],
+        search_price: [0, 0],
+        keyword: ''
+      },
+      facetFieldsSelectFake: {
+        continent: [],
+        country: [],
+        duration: [],
+        area: [],
+        city: [],
+        start_location: [],
+        end_location: [],
+        interest_topic_tag: [],
+        suitable_crowd_tag: [],
+        search_price: [0, 0],
+        keyword: ''
+      },
     }
   },
   actions,

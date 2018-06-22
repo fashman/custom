@@ -1,16 +1,18 @@
 <template>
   <div class="continent">
     <div class="text">
-      <img src="./images/text.jpg" alt="">
+      <a href="/custom/brand">
+         <img src="./images/text.jpg" alt="">
+      </a>
     </div>
     <div class="list">
-      <a href="/custom/list/ct_POI_30096">
+      <a href="/custom/list/ct-POI_30096">
         <img src="./images/na.jpg" alt="">
       </a>
-      <a href="/custom/list/ct_POI_30098">
+      <a href="/custom/list/ct-POI_30098">
         <img src="./images/anz.jpg" alt="">
       </a>
-      <a href="/custom/list/ct_POI_30097">
+      <a href="/custom/list/ct-POI_30097">
         <img src="./images/eu.jpg" alt="">
       </a>
     </div>

@@ -55,11 +55,11 @@ time, mark, audio, video {
     margin: 0 auto;
 }
 
-body {
+html, body {
     /* line-height:1; */
     font-family: 'Microsoft YaHei';
     /* font-weight: 500; */
-    
+    height: 100%;
 }
 
 img {

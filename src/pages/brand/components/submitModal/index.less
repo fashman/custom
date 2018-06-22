@@ -1,0 +1,155 @@
+@color1: #4f3f3c;
+@color2: #5f5250;
+@color3: #c59e71;
+@color4: #a8988a;
+@color5: #999999;
+
+.submitModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100000000;
+  left: 0;
+  background: rgba(255,255,255, 0.8);
+
+  .modal-content {
+    position: absolute;
+    width: 690px;
+    height: 640px;
+    border-radius: 8px;
+    box-shadow: 0 0 25px @color4;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 90px 40px 88px;
+    background: #fff;
+    text-align: center;
+    .title{
+      font-size: 36px;
+      color: @color1;
+
+      span {
+        font-weight: bold;
+        margin: 0 12px;
+      }
+    }
+
+    .form-data {
+      .form-item {
+        height: 111px;
+        border-bottom: 1px solid #eeeeee;
+        box-sizing: border-box;
+        display: flex;
+        font-size: 30px;
+        padding: 40px 0;
+        color: @color1;
+        align-items: center;
+
+        input {
+          flex: 1;
+          text-align: right;
+          border: none;
+          font-size: 30px;
+        }
+        input::-ms-input-placeholder{text-align: right; color:#999999; font-size: 30px;}
+        input::-webkit-input-placeholder{text-align: right; color:#999999; font-size: 30px;}
+        ::-webkit-inner-spin-button { visibility: hidden; }
+        ::-webkit-clear-button {
+          -webkit-appearance: none; 
+        }
+        input, select, textarea, button{
+          outline:none;
+        }
+
+        select {
+          font-size: 30px;
+          color: @color1;
+          height: 110px;
+          background: url('./images/arrows-down.png') no-repeat scroll right center transparent;
+          border: none;
+          background-size:  24px 14px;
+          // flex: 0 0 226px;
+          width: 226px;
+        }
+
+      }
+      .form-item:first-child {
+        margin-top: 55px;
+      }
+
+    }
+
+    .submit-btn {
+      background: @color1;
+      width: 520px;
+      height: 80px;
+      margin: 80px auto 0;
+      text-align: center;
+      line-height: 80px;
+      color: #fff;
+      font-size: 30px;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .close-btn {
+      display: inline-block;
+      position: absolute;
+      height: 60px;
+      width: 60px;
+      background: url(./images/close-btn.png) no-repeat center center;
+      background-size: 60px 60px;
+      margin: auto;
+      bottom: -80px;
+      left: 0;
+      right: 0;
+    }
+
+    .errorHint {
+      height: 51px;
+      line-height: 51px;
+      text-align: center;
+      box-sizing: border-box;
+      border: 1px solid #b64952;
+      position: absolute;
+      margin: auto;
+      right: 40px;
+      left: 40px;
+      top: 155px;
+      font-size: 24px;
+      color: @color1;
+      letter-spacing: 1.5px;
+      vertical-align: middle;
+
+      img {
+        width: 26px;
+        height: 26px;
+        margin-right: 10px;
+        position: relative;
+        top: 3px;
+      }
+    }
+  }
+
+  select {
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: #fff;
+    border:none;
+  }
+  select::-ms-expand { display: none; }
+}
+
+.flexdIos {
+  position: fixed;
+   width: 100%;
+}
+.location{
+  position: absolute;
+}

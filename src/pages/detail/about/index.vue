@@ -1,24 +1,28 @@
 <template>
   <div>
     <div :class="{detail: true, leave}" ref="detail">
+      <Title :title="detail ? detail.title : ''"/>
       <Banner :detail-info="detail"/>
       <Reservation :detail-info="detail" v-if="showBottom"/>
       <Next :next="nextPage"/>
       <Error :error="errorModal.show" :text="errorModal.text" :callback="changeState"/>
-      <SideBar :group-id="detail ? detail.ancestorsName : null"/>
+      <SideBar />
     </div>
     <Loading :loading="loading"/>
+    <Consulting />
   </div>
 </template>
 
 <script>
+import { mapState, mapMutations, mapActions } from 'vuex';
 import Banner from './components/banner';
 import Reservation from '@/components/reservation';
 import Next from './components/next';
 import Loading from '@/components/loading';
 import Error from '@/components/error';
 import SideBar from '@/components/sidebar';
-import { mapState, mapMutations, mapActions } from 'vuex';
+import Title from './components/title';
+import Consulting from '@/components/consulting';
 
 export default {
   name: 'DetailAbout',
@@ -26,20 +30,22 @@ export default {
     return {
       startx: 0,
       starty: 0,
-      endx: 0, 
+      endx: 0,
       endy: 0,
       result: 0,
       leave: false,
       showBottom: true,
     }
   },
-  components: { 
+  components: {
     Banner,
     Reservation,
     Next,
     Loading,
     Error,
-    SideBar
+    SideBar,
+    Title,
+    Consulting
   },
   created(){
     const { id } = this.$route.params;
@@ -103,7 +109,7 @@ export default {
     document.addEventListener("touchstart", this.handleTouchStart);
     document.addEventListener("touchmove", this.handleTouchEnd);
   },
-  destroyed () {
+  beforeDestory () {
     document.removeEventListener("touchstart", this.handleTouchStart);
     document.removeEventListener("touchmove", this.handleTouchEnd);
   },

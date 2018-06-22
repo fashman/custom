@@ -24,7 +24,9 @@ export default {
       errorModal: {
         show: false,
         text: ''
-      }
+      },
+      activeIndex: 0,
+      showAbout: true
     }
   },
   actions,

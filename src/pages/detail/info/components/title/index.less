@@ -1,0 +1,87 @@
+.title {
+  height: 104px;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+
+  .title-box {
+    text-align: center;
+    height: 104px;
+    font-size: 32px;
+    color: #4f3f3c;
+  
+    h2 {
+      line-height: 105px;
+      font-weight: normal;
+    }
+  
+    .before {
+      width: 15px;
+      height: 105px;
+      position: absolute;
+      left: 30px;
+      top: 0;
+      background: url(./images/arrow-left.png) no-repeat center;
+      background-size: 15px auto;
+    }
+  
+    .more {
+      position: absolute;
+      top: 40px;
+      right: 46px;
+      width: 39px;
+      height: 25px;
+      background: url(./images/more.png) no-repeat center;
+      background-size: 39px 9px;
+    }
+  
+    .menu {
+      position: absolute;
+      top: 80px;
+      right: 42px;
+      padding: 26px;
+      background-color: rgba(0, 0, 0, .9);
+      border-radius: 4px;
+      z-index: 10;
+      font-size: 24px;
+  
+      &:before {
+        content: ' ';
+        position: absolute;
+        top: -10px;
+        right: 8px;
+        width: 0;
+        height: 0;
+        border-bottom: 12px solid rgba(0, 0, 0, .9);
+        border-left: 18px solid transparent;
+        border-right: 18px solid transparent;
+      }
+  
+      a {
+        text-align: left;
+        margin-bottom: 25px;
+        padding-left: 50px;
+        display: block;
+        color: #c4c4c5;
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+  
+        &.home {
+          background: url(./images/home.png) no-repeat left center;
+          background-size: 27px auto;
+        }
+  
+        &.line {
+          background: url(./images/line.png) no-repeat left center;
+          background-size: 26px auto;
+        }
+  
+        &.order {
+          background: url(./images/order.png) no-repeat left center;
+          background-size: 23px auto;
+        }
+      }
+    }
+  }
+}

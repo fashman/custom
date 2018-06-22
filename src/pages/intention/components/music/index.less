@@ -1,0 +1,39 @@
+.music-box {
+  position: fixed;
+  top: 144px;
+  right: 60px;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+  overflow: hidden;
+  transition: all .5s ease;
+
+  &.m0 {
+    background: url(./images/music0.png) no-repeat center;
+    background-size: 60px auto;
+  }
+
+  &.m1 {
+    background: url(./images/music1.png) no-repeat center;
+    background-size: 60px auto;
+  }
+
+  &.m2 {
+    background: url(./images/music2.png) no-repeat center;
+    background-size: 60px auto;
+  }
+
+  &.m3 {
+    background: url(./images/music3.png) no-repeat center;
+    background-size: 60px auto;
+  }
+
+  &.playing {
+    animation: rotate 3s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0); }
+    to   { transform: rotate(360deg);}
+  }
+}
